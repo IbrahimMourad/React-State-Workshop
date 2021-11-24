@@ -23,12 +23,7 @@ export default class App extends Component {
 
   setUpdate = (text, id) => {
     const tasks = this.state.tasks;
-    tasks.map((item) => {
-      if (item.id === id) {
-        item.description = text;
-      }
-    });
-
+    tasks.map((item) => (item.id === id ? (item.description = text) : item));
     this.setState({
       tasks: tasks,
     });
